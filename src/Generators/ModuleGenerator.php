@@ -556,13 +556,13 @@ class ModuleGenerator extends Generator
     }
 
     /**
-     * Get replacement for $REAL_MODULE_NAMESPACE$.
+     * Get replacement for $WHOLE_MODULE_NAMESPACE$.
      *
      * @return string
      */
-    protected function getRealModuleNamespaceReplacement()
+    protected function getWholeModuleNamespaceReplacement()
     {
-        return $this->module->config('namespace');
+        return $this->module->config('namespace') . '\\' . $this->module->getStudlyName();
     }
 
     /**
