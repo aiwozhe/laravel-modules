@@ -562,7 +562,7 @@ class ModuleGenerator extends Generator
      */
     protected function getWholeModuleNamespaceReplacement()
     {
-        return $this->module->config('namespace') . '\\' . $this->module->getStudlyName();
+        return $this->module->config('namespace') . '\\' . $this->getName();
     }
 
     /**
