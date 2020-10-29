@@ -31,7 +31,7 @@ Find out why you should use this package in the article: [Writing modular applic
 To install through Composer, by run the following command:
 
 ``` bash
-composer require nwidart/laravel-modules
+composer require aiwozhe/laravel-modules
 ```
 
 The package will automatically register a service provider and alias.
