@@ -74,7 +74,7 @@ class CommandMakeCommand extends GeneratorCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/command.stub', [
-            'COMMAND_NAME' => $this->getCommandName(),
+            'COMMAND_NAME' => "{$module->getKebabName()}:{$this->getCommandName()}",
             'NAMESPACE'    => $this->getClassNamespace($module),
             'CLASS'        => $this->getClass(),
         ]))->render();

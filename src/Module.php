@@ -115,6 +115,16 @@ abstract class Module
     }
 
     /**
+     * Get name in kebab case.
+     *
+     * @return string
+     */
+    public function getKebabName(): string
+    {
+        return Str::kebab($this->name);
+    }
+
+    /**
      * Get description.
      *
      * @return string
