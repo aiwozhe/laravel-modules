@@ -506,6 +506,26 @@ class ModuleGenerator extends Generator
     }
 
     /**
+     * Get the module name in kebab case.
+     *
+     * @return string
+     */
+    protected function getKebabNameReplacement()
+    {
+        return Str::kebab($this->getName());
+    }
+
+    /**
+     * Get the module name in snake case.
+     *
+     * @return string
+     */
+    protected function getSnakeNameReplacement()
+    {
+        return Str::snake($this->getName());
+    }
+
+    /**
      * Get the module name in studly case.
      *
      * @return string
@@ -536,6 +556,16 @@ class ModuleGenerator extends Generator
     }
 
     /**
+     * Get replacement for $REAL_MODULE_NAMESPACE$.
+     *
+     * @return string
+     */
+    protected function getRealModuleNamespaceReplacement()
+    {
+        return $this->module->config('namespace');
+    }
+
+    /**
      * Get replacement for $AUTHOR_NAME$.
      *
      * @return string
@@ -558,5 +588,15 @@ class ModuleGenerator extends Generator
     protected function getProviderNamespaceReplacement(): string
     {
         return str_replace('\\', '\\\\', GenerateConfigReader::read('provider')->getNamespace());
+    }
+
+    /**
+     * Get replacement for $REAL_PROVIDER_NAMESPACE$.
+     *
+     * @return string
+     */
+    protected function getRealProviderNamespaceReplacement(): string
+    {
+        return GenerateConfigReader::read('provider')->getNamespace();
     }
 }
