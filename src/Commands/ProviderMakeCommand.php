@@ -84,6 +84,8 @@ class ProviderMakeCommand extends GeneratorCommand
             'MODULE'            => $this->getModuleName(),
             'NAME'              => $this->getFileName(),
             'STUDLY_NAME'       => $module->getStudlyName(),
+            'KEBAB_NAME'       => $module->getKebabName(),
+            'SNAKE_NAME'       => $module->getSnakeName(),
             'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
             'PATH_VIEWS'        => GenerateConfigReader::read('views')->getPath(),
             'PATH_LANG'         => GenerateConfigReader::read('lang')->getPath(),

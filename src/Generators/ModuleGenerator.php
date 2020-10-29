@@ -589,14 +589,4 @@ class ModuleGenerator extends Generator
     {
         return str_replace('\\', '\\\\', GenerateConfigReader::read('provider')->getNamespace());
     }
-
-    /**
-     * Get replacement for $REAL_PROVIDER_NAMESPACE$.
-     *
-     * @return string
-     */
-    protected function getRealProviderNamespaceReplacement(): string
-    {
-        return GenerateConfigReader::read('provider')->getNamespace();
-    }
 }
